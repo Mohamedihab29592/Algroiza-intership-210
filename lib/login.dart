@@ -15,98 +15,101 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+
+
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  height: 400,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(
-                              "asset/images/Businessrisk-pana.png")))),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child:Text('Welcome To Fashion Daily',style: TextStyle(color: Colors.grey),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text(
-                            'Sign In',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                          TextButtonIcon(text: 'Help'),
-                        ]),
-                    const PhoneForm(),
-                    const SizedBox(
-                      height:20,
-                    ),
-                    PublicButton(
-                      function: () {},
-                      text: 'Sign in',
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                height: 400,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
 
+                        image: AssetImage(
+                            "asset/images/color.jpg"),
+                    fit: BoxFit.cover)
+
+                ),
+              ),
+              const SizedBox(height: 20,),
+
+              const Text('Welcome To Fashion Daily',style: TextStyle(color: Colors.grey),),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
                         Text(
-                           'Or',
-                          style: TextStyle(color: Colors.grey),
+                          'Sign In',
+                          style: TextStyle(fontSize: 40),
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const GoogleSignIn(),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        TextButtonIcon(text: 'Help'),
+                      ]),
+                  const PhoneForm(),
+                  const SizedBox(
+                    height:20,
+                  ),
+                  PublicButton(
+                    function: () {},
+                    text: 'Sign in',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
 
-                          children: [
-                            const Text( "Doesn't has any account?"),
-                            TextButton(
-                              onPressed: () {
-                                navigateTo(context, const RegisterPage());
-                              },
-                              child: const Text(
-                                'Register here',
-                              ),
+                    children: const [
+                      Text(
+                         'Or',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const GoogleSignIn(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+
+                        children: [
+                          const Text( "Doesn't has any account?"),
+                          TextButton(
+                            onPressed: () {
+                              navigateTo(context, const RegisterPage());
+                            },
+                            child: const Text(
+                              'Register here',
                             ),
+                          ),
 
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(textAlign:TextAlign.center,
-                          "Use the application according to policy rules. Any kinds of violations will be subject to sanctions ",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(textAlign:TextAlign.center,
+                        "Use the application according to policy rules. Any kinds of violations will be subject to sanctions ",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
 
-                  ],
-                ),
+                ],
               ),
             ],
           ),
