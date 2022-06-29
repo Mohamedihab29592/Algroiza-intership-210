@@ -29,13 +29,13 @@ class _OnBoardingState extends State<OnBoarding> {
 
   List<BoardingModel> boarding = [
     BoardingModel(
-      image: 'asset/images/bloom-woman-shopping-for-clothes-online.png',
+      image: 'asset/images/board1.png',
       title: 'Get food delivery to your doorstep asap',
       body:
           'we have young and professional delivery team that will bring your food as soon as possible to your door step',
     ),
     BoardingModel(
-      image: 'asset/images/marginalia-753.png',
+      image: 'asset/images/board2.png',
       title: 'Buy any food from your favorite restaurant',
       body:
           'we are constantly adding your favourite restaurant throughout the territory and around your area carefully selected ',
@@ -64,28 +64,21 @@ class _OnBoardingState extends State<OnBoarding> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
+
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  '7',
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.amber,
-                    fontWeight: FontWeight.bold,
+            SizedBox(
+              height: 50,
+              child: Row(
+
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Image(
+                    image: AssetImage('asset/images/7.png'),
                   ),
-                ),
-                Text(
-                  'Krave',
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.teal,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
+                ],
+              ),
             ),
             Expanded(
               child: PageView.builder(
@@ -115,7 +108,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 
   Widget buildBoardingItem(BoardingModel model) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: Image(
