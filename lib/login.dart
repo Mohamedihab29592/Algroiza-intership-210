@@ -1,8 +1,6 @@
 import 'package:algroriza_intership_210/register.dart';
 import 'package:flutter/material.dart';
-
-import 'components/TextIcon.dart';
-import 'components/components.dart';
+import 'components.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

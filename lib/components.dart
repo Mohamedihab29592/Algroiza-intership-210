@@ -180,3 +180,49 @@ class MyFormField extends StatelessWidget {
     );
   }
 }
+
+class TextButtonIcon extends StatelessWidget {
+  final String text;
+  final IconData? iconData;
+
+  const TextButtonIcon({Key? key, required this.text, this.iconData})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {},
+      child: Row(
+        children: [
+          Text( text,  ),
+          const SizedBox(
+            width: 5,
+          ),
+          CircularIcon(
+            icon: iconData,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CircularIcon extends StatelessWidget {
+  final IconData? icon;
+  const CircularIcon({
+    Key? key,
+    this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: 10,
+      child: Icon(
+        icon ?? Icons.question_mark_sharp,
+        size: 10,
+        color: Colors.white,
+      ),
+    );
+  }
+}

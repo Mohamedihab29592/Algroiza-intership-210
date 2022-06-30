@@ -1,9 +1,6 @@
 import 'package:algroriza_intership_210/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'components/TextIcon.dart';
-import 'components/components.dart';
+import 'components.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -23,9 +20,9 @@ class _RegisterPageState extends State<RegisterPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: FloatingActionButton( backgroundColor: Colors.black,
-              onPressed: () { Navigator.pop(context); },
+              onPressed: () {  },
               child: IconButton(icon:  const Icon(Icons.arrow_back_ios_outlined), onPressed: () { Navigator.pop(context); },)),
         ),
       ),
