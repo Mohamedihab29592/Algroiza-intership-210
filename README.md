@@ -1,17 +1,10 @@
 # algroriza_intership_210
 
-A new Flutter project.
+Responsive
 
-## Getting Started
+## (onBoarding - sign in - register) UI Screens 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Algroiza-intership-210" 
+![1](https://user-images.githubusercontent.com/64233832/176704954-b44a82fc-6a42-4d7b-aaf3-6e6065e5fbbb.PNG)
+![2 1](https://user-images.githubusercontent.com/64233832/176704959-3fe49e28-9ee1-4300-b032-fe4c14f81d0b.PNG)
+![2](https://user-images.githubusercontent.com/64233832/176704964-4819cb93-0883-4eb9-bac8-8b3dc627b73a.PNG)
+![3](https://user-images.githubusercontent.com/64233832/176704970-5663715b-fd45-4f00-a03f-e6f721c68584.PNG)
