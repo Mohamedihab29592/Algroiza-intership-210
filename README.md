@@ -1,6 +1,6 @@
 # algroriza_intership_210
 
-Responsive
+Responsive - reusable components - phone_form_field
 
 ## (onBoarding - sign in - register) UI Screens 
 
