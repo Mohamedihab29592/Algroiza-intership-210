@@ -15,139 +15,150 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(8),
-          child: FloatingActionButton( backgroundColor: Colors.black,
-              onPressed: () {  },
-              child: IconButton(icon:  const Icon(Icons.arrow_back_ios_outlined), onPressed: () { Navigator.pop(context); },)),
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 400,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-
+              Stack(
+                alignment: AlignmentDirectional.bottomStart,
+                children:[
+                  Container(
+                  height: 100,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
                         image: AssetImage(
                             "asset/images/color.jpg"),
-                        fit: BoxFit.cover)
+                        fit: BoxFit.cover,
+
+                      )
+                  ),
 
                 ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 5),
+                    child: SizedBox(
+                      height: 40,
+                      width: 50,
+                      child: FloatingActionButton(
+
+                          backgroundColor: Colors.black,
+                          onPressed: () {},
+                          child: IconButton(
+                            icon: const Icon(Icons.arrow_back_ios_outlined),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          )),
+                    ),
+                  ),
+
+                ]
               ),
-              const SizedBox(height: 20,),
-              const Text(
-                'Welcome To Fashion Daily',
-                style: TextStyle(color: Colors.grey),
+
+
+              const SizedBox(
+                height: 10,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              Row(
+                children: const [
+                  Text(
+                    'Welcome To Fashion Daily',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'Register',
+                      style: TextStyle(fontSize: 40),
+                    ),
+                    TextButtonIcon(text: 'Help'),
+                  ]),
+              const SizedBox(
+                height: 10,
+              ),
+              const MyFormField(
+                label: 'Email',
+                type: TextInputType.text,
+                hint: 'Eg. example@email.com',
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const PhoneForm(),
+              const SizedBox(
+                height: 10,
+              ),
+              MyFormField(
+                label: 'Password',
+                type: TextInputType.visiblePassword,
+                hint: 'Password',
+                isPassword: isHidePass,
+                suffixIcon:
+                    isHidePass ? Icons.visibility_off : Icons.visibility,
+                suffixIconPressed: () {
+                  setState(() {
+                    isHidePass = !isHidePass;
+                  });
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              PublicButton(
+                function: () {},
+                text: 'Register', backgroundColor: Colors.blue,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Or',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const GoogleSignIn(),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Register',
-                          style: TextStyle(fontSize: 40),
-                        ),
-                        TextButtonIcon(text: 'Help'),
-                      ]),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const MyFormField(
-                    label: 'Email',
-                    type: TextInputType.text,
-                    hint: 'Eg. example@email.com',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const PhoneForm(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  MyFormField(
-                    label: 'Password',
-                    type: TextInputType.visiblePassword,
-                    hint: 'Password',
-                    isPassword: isHidePass,
-                    suffixIcon:
-                        isHidePass ? Icons.visibility_off : Icons.visibility,
-                    suffixIconPressed: () {
-                      setState(() {
-                        isHidePass = !isHidePass;
-                      });
+                  const Text("Has any account?"),
+                  TextButton(
+                    onPressed: () {
+                      navigateTo(context, const LoginScreen());
                     },
+                    child: const Text(
+                      'Sign in here',
+                    ),
+                  )
+                ],
+              ),
+
+              Column(
+                children: [
+                  const Text(
+                    textAlign: TextAlign.center,
+                    "By registering you account, you are agree to our",
+                    style: TextStyle(color: Colors.grey),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  PublicButton(
-                    function: () {},
-                    text: 'Register',
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'Or',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const GoogleSignIn(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Has any account?"),
-                      TextButton(
-                        onPressed: () {
-                          navigateTo(context, const LoginScreen());
-                        },
-                        child: const Text(
-                          'Sign in here',
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    children: [
-                      const Text(
-                        textAlign: TextAlign.center,
-                        "By registering you account, you are agree to our",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'terms and condition',
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                    ],
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'terms and condition',
+                    ),
                   ),
                 ],
               ),
@@ -155,7 +166,6 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
       ),
-
     );
   }
 }

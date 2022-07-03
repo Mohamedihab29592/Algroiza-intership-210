@@ -32,13 +32,13 @@ class _OnBoardingState extends State<OnBoarding> {
       image: 'asset/images/board1.png',
       title: 'Get food delivery to your doorstep asap',
       body:
-          'we have young and professional delivery team that will bring your food as soon as possible to your door step',
+          'we have young and professional delivery\n team that will bring your food as soon as\n possible to your door step.',
     ),
     BoardingModel(
       image: 'asset/images/board2.png',
       title: 'Buy any food from your favorite restaurant',
       body:
-          'we are constantly adding your favourite restaurant throughout the territory and around your area carefully selected ',
+          'we are constantly adding your favourite\n restaurant throughout the territory and around\n your area carefully selected.',
     ),
   ];
   bool isLast = false;
@@ -48,30 +48,17 @@ class _OnBoardingState extends State<OnBoarding> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: IconButton(
-              onPressed: () {
-                navigateTo(context, const LoginScreen());
-
-              },
-              icon: const Text(
-                'skip',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-          ),
+          SkipButton(function: () { navigateTo(context, const LoginScreen()); },),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-
           children: [
+
             SizedBox(
               height: 50,
               child: Row(
-
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Image(
@@ -99,8 +86,6 @@ class _OnBoardingState extends State<OnBoarding> {
                 itemCount: boarding.length,
               ),
             ),
-
-
           ],
         ),
       ),
@@ -111,55 +96,74 @@ class _OnBoardingState extends State<OnBoarding> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
+            flex: 6,
             child: Image(
               image: AssetImage(model.image),
             ),
           ),
-          Text(
-            textAlign:TextAlign.center,
-            model.title,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+          Expanded(
+            flex: 3,
+            child: Text(
+              textAlign: TextAlign.center,
+              model.title,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            textAlign:TextAlign.center,
-            model.body,
-            style: const TextStyle(
-              fontSize: 15,
-              color: Colors.grey,
+          Expanded(
+            flex: 2,
+            child: Text(
+              maxLines: 3,
+              textAlign: TextAlign.center,
+              model.body,
+              style: const TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
+          SmoothPageIndicator(
+            controller: boardController,
+            effect: const ExpandingDotsEffect(
+              dotColor: Colors.grey,
+              activeDotColor: Colors.amberAccent,
+              dotHeight: 10,
+              expansionFactor: 4,
+              dotWidth: 10,
+              spacing: 5,
+            ),
+            count: boarding.length,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          PublicButton(
+            function: () {
+              navigateTo(context, const LoginScreen());
 
+            },
+            text: 'Get Started',
+            backgroundColor: Colors.teal,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SmoothPageIndicator(
-                controller: boardController,
-                effect: const ExpandingDotsEffect(
-                  dotColor: Colors.grey,
-                  activeDotColor: Colors.amberAccent,
-                  dotHeight: 10,
-                  expansionFactor: 4,
-                  dotWidth: 10,
-                  spacing: 5,
-                ),
-                count: boarding.length,
-              ),
+              const Text("Don't have an account?"),
+              TextButton(
+                  onPressed: () {
+                    navigateTo(context, const RegisterPage());
+                  },
+                  child: const Text('Sign up'))
             ],
           ),
-           const SizedBox(height: 30,),
-
-          PublicButton(function: () { navigateTo(context, const LoginScreen()); }, text: 'Get Started',),
-          const SizedBox(height: 30,),
-           Row(
-             mainAxisAlignment: MainAxisAlignment.center,
-             children: [
-               const Text("Don't have an account?"),
-               TextButton(onPressed: (){ navigateTo(context, const RegisterPage());}, child: const Text('Sign up'))
-             ],
-           ),
         ],
       );
 }
