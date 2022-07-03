@@ -18,12 +18,9 @@ class PhoneForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(bottom: 8.0),
-          child: Text(
-            'Phone Number',
-            style: TextStyle(color: Colors.grey),
-          ),
+        const Text(
+          'Phone Number',
+          style: TextStyle(color: Colors.grey),
         ),
         PhoneFormField(
           showFlagInInput: true,
@@ -42,6 +39,37 @@ class PhoneForm extends StatelessWidget {
   }
 }
 
+
+
+class SkipButton extends StatelessWidget {
+  final VoidCallback function;
+
+  const SkipButton({Key? key, required this.function}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+
+        width: 60,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+        ),
+
+        child: MaterialButton(
+          onPressed: function,
+          color: Colors.grey.shade100,
+
+          child: const Text( 'Skip',style: TextStyle(color: Colors.black),),
+        ),
+      ),
+    );
+  }
+}
+
+
 class PublicButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
@@ -53,7 +81,7 @@ class PublicButton extends StatelessWidget {
 
   const PublicButton({
     Key? key,
-    this.backgroundColor = Colors.blue,
+    required this.backgroundColor,
     required this.function,
     this.width = double.infinity,
     required this.text,
@@ -145,12 +173,9 @@ class MyFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: Text(
-            label,
-            style: const TextStyle(color: Colors.grey),
-          ),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.grey),
         ),
         TextFormField(
           obscureText: isPassword,

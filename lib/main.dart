@@ -14,15 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-fontFamily: 'Schyler',
+        fontFamily: 'Schyler',
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
-
           iconTheme: IconThemeData(
             color: Colors.black,
           ),
@@ -32,10 +30,8 @@ fontFamily: 'Schyler',
           ),
         ),
         scaffoldBackgroundColor: Colors.white,
-
       ),
       home: const OnBoarding(),
     );
   }
 }
-

@@ -13,17 +13,17 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       extendBodyBehindAppBar: true,
-
 
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 400,
+                height: 350,
+                width: double.infinity,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
 
@@ -33,9 +33,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 10,),
 
-              const Text('Welcome To Fashion Daily',style: TextStyle(color: Colors.grey),),
+               Row(
+                 children:const [
+                   Text('Welcome To Fashion Daily',style: TextStyle(color: Colors.grey),),
+                 ],
+               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -50,14 +54,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       ]),
                   const PhoneForm(),
                   const SizedBox(
-                    height:20,
+                    height:10,
                   ),
                   PublicButton(
                     function: () {},
                     text: 'Sign in',
+                    backgroundColor: Colors.blue,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -70,11 +75,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   const GoogleSignIn(),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Column(
                     children: [
@@ -95,15 +100,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       const Text(textAlign:TextAlign.center,
-                        "Use the application according to policy rules. Any kinds of violations will be subject to sanctions ",
+                        "Use the application according to policy rules. Any\n kinds of violations will be subject to sanctions. ",
                         style: TextStyle(color: Colors.grey),
                       ),
-                      const SizedBox(
-                        height: 20,
-                      ),
+
                     ],
                   ),
 
