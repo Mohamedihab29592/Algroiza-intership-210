@@ -102,7 +102,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Text(
               textAlign: TextAlign.center,
               model.title,
@@ -113,7 +113,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
           ),
           Expanded(
-            flex: 2,
+            flex: 3,
             child: Text(
               maxLines: 3,
               textAlign: TextAlign.center,
