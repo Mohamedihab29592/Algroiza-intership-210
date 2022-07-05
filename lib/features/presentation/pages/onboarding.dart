@@ -1,8 +1,10 @@
-import 'package:algroriza_intership_210/register.dart';
+import 'package:algroriza_intership_210/features/presentation/pages/register.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'components.dart';
+import '../../../constans.dart';
+import '../widgets/PublicButton.dart';
+import '../widgets/skipButton.dart';
 import 'login.dart';
 
 class BoardingModel {
@@ -48,14 +50,17 @@ class _OnBoardingState extends State<OnBoarding> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          SkipButton(function: () { navigateTo(context, const LoginScreen()); },),
+          SkipButton(
+            function: () {
+              navigateTo(context, const LoginScreen());
+            },
+          ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-
             SizedBox(
               height: 50,
               child: Row(
@@ -96,7 +101,7 @@ class _OnBoardingState extends State<OnBoarding> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            flex: 6,
+            flex: 8,
             child: Image(
               image: AssetImage(model.image),
             ),
@@ -145,7 +150,6 @@ class _OnBoardingState extends State<OnBoarding> {
           PublicButton(
             function: () {
               navigateTo(context, const LoginScreen());
-
             },
             text: 'Get Started',
             backgroundColor: Colors.teal,
